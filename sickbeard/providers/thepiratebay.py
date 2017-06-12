@@ -327,7 +327,7 @@ class ThePirateBayProvider(generic.TorrentProvider):
            return False
            
         try:
-            r = requests.get('http://torcache.net/torrent/' + torrent_hash + '.torrent')
+            r = requests.get('https://itorrents.org/torrent/' + torrent_hash + '.torrent')
         except Exception, e:
             logger.log("Unable to connect to Torcache: " + ex(e), logger.ERROR)
             return False
