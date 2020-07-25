@@ -258,6 +258,7 @@ class KATProvider(generic.TorrentProvider):
                         except (AttributeError, TypeError):
                             continue
 
+                        loger.log(u"|"+title+"|"+url+"|"+verified+"|"+trusted+"|"+seeders+"|"+leechers, logger.DEBUG)
                         if mode != 'RSS' and seeders == 0:
                             continue 
                   
