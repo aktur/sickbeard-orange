@@ -632,7 +632,10 @@ class Tvdb:
             result['id'] = int(result['id'])
             result['lid'] = self.config['langabbv_to_id'][result['language']]
             if 'aliasnames' in result:
-                result['aliasnames'] = result['aliasnames'].split("|")
+                try:
+                    result['aliasnames'] = result['aliasnames'].split("|")
+                except:
+                    log().debug('Exception on split')
             log().debug('Found series %(seriesname)s' % result)
             allSeries.append(result)
         
