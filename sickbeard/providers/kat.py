@@ -54,7 +54,7 @@ class KATProvider(generic.TorrentProvider):
 
         self.cache = KATCache(self)
         
-        self.url = 'http://kickass.to/'
+        self.url = 'https://kickasstorrents.cr/'
 
         self.searchurl = self.url+'usearch/%s/?field=seeders&sorder=desc'  #order by seed       
 
