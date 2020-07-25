@@ -245,7 +245,6 @@ class KATProvider(generic.TorrentProvider):
                         continue
                     
                     for tr in torrent_rows[1:]:
-                        logger.log(u"+++"+tr, logger.DEBUG)
 
                         try:
                             link = urlparse.urljoin(self.url, (tr.find('div', {'class': 'torrentname'}).find_all('a')[1])['href'])
@@ -257,7 +256,7 @@ class KATProvider(generic.TorrentProvider):
                             seeders = int(tr.find_all('td')[-2].text)
                             leechers = int(tr.find_all('td')[-1].text)
                         except (AttributeError, TypeError):
-                            logger.log(u"parsing error", logger.DEBUG)
+                            logger.log(u"parsing tr error", logger.ERROR)
                             continue
 
                         loger.log(u"|"+title+"|"+url+"|"+verified+"|"+trusted+"|"+seeders+"|"+leechers, logger.DEBUG)
