@@ -245,7 +245,7 @@ class KATProvider(generic.TorrentProvider):
                         continue
                     
                     for tr in torrent_rows[1:]:
-                        logger.log(u""+tr, logger.DEBUG)
+                        logger.log(u"+++"+tr, logger.DEBUG)
 
                         try:
                             link = urlparse.urljoin(self.url, (tr.find('div', {'class': 'torrentname'}).find_all('a')[1])['href'])
