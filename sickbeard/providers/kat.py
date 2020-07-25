@@ -222,7 +222,8 @@ class KATProvider(generic.TorrentProvider):
             for search_string in search_params[mode]:
                 
                 if mode != 'RSS':
-                    searchURL = self.searchurl %(urllib.quote(unidecode(search_string)))    
+                    logger.log(u"Search string: " + search_string, logger.DEBUG)
+                    searchURL = self.searchurl %(urllib.quote(unidecode(search_string.replace(".", " "))))
                     logger.log(u"Search string: " + searchURL, logger.DEBUG)
                 else:
                     searchURL = self.url + 'tv/?field=time_add&sorder=desc'

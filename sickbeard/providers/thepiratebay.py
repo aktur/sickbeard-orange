@@ -243,8 +243,6 @@ class ThePirateBayProvider(generic.TorrentProvider):
                 if not data:
                     logger.log(u"No data returned", logger.DEBUG)
                     continue
-                else:
-                    logger.log(U"Data: "+data, logger.DEBUG)
 
                 re_title_url = self.proxy._buildRE(self.re_title_url)
 
