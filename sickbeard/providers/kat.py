@@ -256,10 +256,8 @@ class KATProvider(generic.TorrentProvider):
                             seeders = int(tr.find_all('td')[-2].text)
                             leechers = int(tr.find_all('td')[-1].text)
                         except (AttributeError, TypeError):
-                            logger.log(u"parsing tr error", logger.ERROR)
                             continue
 
-                        loger.log(u"|"+title+"|"+url+"|"+verified+"|"+trusted+"|"+seeders+"|"+leechers, logger.DEBUG)
                         if mode != 'RSS' and seeders == 0:
                             continue 
                   
